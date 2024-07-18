@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Student Information QRcode Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-language" content="en">
+  <meta name="keywords" content="Sanjose Litex, SJLSHS, SJLSHSTECH, SJLSHSICT">
+  <meta name="author" content="Dewie U. Terrazola">
+  <meta name="publisher" content="Dewie U. Terrazola">
+  <meta name="description" content="Student's Information QRcode Generator, for Entry and Exit System by G12-Python.">
+  <meta name="audience" content="Everyone">
+  <meta name="robots" content="index, follow">
+
+<title>Student Information QRcode Generator</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="user-input-section">
+  <section class="heading">
+    <div class="title">SJLSHS SECURITY</div>
+    <div class="sub-title">By Dewie U. Terrazola</div>
+  </section>
+  <section class="user-input">
+    <input type="text" placeholder="Your Name..." name="inputname" id="inputname" autocomplete="off" required>
+    <input type="text" placeholder="Your Lastname..." name="inputln" id="inputln" autocomplete="off" required>
+    <input type="text" placeholder="Your Grade & Section..." name="gradesection" id="gradesection" autocomplete="off" required>
+    <input type="text" placeholder="Your LRN..." name="inputlrn" id="inputlrn" autocomplete="off" required>
+    <input type="email" placeholder="Parent/Guardian's Email Address..." name="inputemail" id="inputemail" autocomplete="off" required>
+    <input type="number" placeholder="Parent's Contact Number..." name="inputcontact" id="inputcontact" autocomplete="off" required>
+    <button class="button" type="button" id="button">Generate<i class="fa-solid fa-rotate"></i></button>
+  </section>
+</div>
+<div class="qr-code-container">
+  <div class="qr-code" id="qr-code" style></div>
+</div>
+<!-- partial -->
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>-->
+  <script  src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/qrcode.min.js"></script>
+
+</body>
+</html>
