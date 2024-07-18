@@ -1,50 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Student Information QRcode Generator</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="content-language" content="en">
-  <meta name="keywords" content="Sanjose Litex, SJLSHS, SJLSHSTECH, SJLSHSICT">
-  <meta name="author" content="Dewie U. Terrazola">
-  <meta name="publisher" content="Dewie U. Terrazola">
-  <meta name="description" content="Student's Information QRcode Generator, for Entry and Exit System by G12-Python.">
-  <meta name="audience" content="Everyone">
-  <meta name="robots" content="index, follow">
+  <title>Elorahub - Mail</title>
+  <!-- Link to Google Fonts for a fancy font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link id="bootstrap-css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Permanent Marker', cursive; /* Apply the fancy font */
+      font-weight: 400;
+      font-style: normal;
+    }
 
-<title>Student Information QRcode Generator</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;display=swap'><link rel="stylesheet" href="./style.css">
-
+    iframe {
+      border: none;
+      height: 100%;
+      width: 100%;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: black; /* Make navbar text black */
+    }
+    .navbar-dark .navbar-toggler {
+      color: black; /* Make navbar toggler icon black */
+      border-color: black; /* Make navbar toggler border black */
+    }
+    .spinner-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 9999;
+    }
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+    /* Color Classes */
+    .first-color {
+      background: #155263;
+    }
+    .second-color {
+      background: #ff6f3c;
+    }
+    .third-color {
+      background: #ff9a3c;
+    }
+    .fourth-color {
+      background: #f5f410;
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="user-input-section">
-  <section class="heading">
-    <div class="title">SJLSHS SECURITY</div>
-    <div class="sub-title">By Dewie U. Terrazola</div>
-  </section>
-  <section class="user-input">
-    <input type="text" placeholder="Your Name..." name="inputname" id="inputname" autocomplete="off" required>
-    <input type="text" placeholder="Your Lastname..." name="inputln" id="inputln" autocomplete="off" required>
-    <input type="text" placeholder="Your Grade & Section..." name="gradesection" id="gradesection" autocomplete="off" required>
-    <input type="text" placeholder="Your LRN..." name="inputlrn" id="inputlrn" autocomplete="off" required>
-    <input type="email" placeholder="Parent/Guardian's Email Address..." name="inputemail" id="inputemail" autocomplete="off" required>
-    <input type="number" placeholder="Parent's Contact Number..." name="inputcontact" id="inputcontact" autocomplete="off" required>
-    <button class="button" type="button" id="button">Generate<i class="fa-solid fa-rotate"></i></button>
-  </section>
-</div>
-<div class="qr-code-container">
-  <div class="qr-code" id="qr-code" style></div>
-</div>
-<!-- partial -->
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js'></script>-->
-  <script  src="./script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/qrcode.min.js"></script>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark first-color">
+    <a class="navbar-brand" href="#" style="color:black;">Elorahub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://t.me/exiodi">Buy</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- Loading Spinner -->
+  <div id="spinnerContainer" class="spinner-container">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <iframe id="myIframe" onload="hideSpinner()"></iframe>
+
+  <script>
+    // Function to hide the spinner
+    function hideSpinner() {
+      document.getElementById('spinnerContainer').style.display = 'none';
+    }
+
+    // Function to set color scheme based on conditions (example)
+    function setColorScheme() {
+      // Example condition: set color based on some parameter or logic
+      var condition = true; // Replace with your condition
+
+      if (condition) {
+        document.getElementById('navbar').classList.remove('first-color', 'second-color', 'third-color', 'fourth-color');
+        document.getElementById('navbar').classList.add('fourth-color'); // Change class based on condition
+      } else {
+        document.getElementById('navbar').classList.add('fourth-color');
+      }
+    }
+
+    // Call setColorScheme function to set initial color scheme
+    setColorScheme();
+
+    // Set the iframe src with the decoded email parameter
+    var iframe = document.getElementById('myIframe');
+    iframe.src = "https://script.google.com/macros/s/AKfycbyUlrgsz8U_RNH5tlrgEsKz0AbJoIowcq_q7G2HXrhNf378c6Yhu3sUyjbUDlZeck6Y/exec";
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
