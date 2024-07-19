@@ -22,7 +22,7 @@
 
     iframe {
       border: none;
-      height: 100%;
+      height: calc(100% - 60px); /* Adjust height to account for navbar and footer */
       width: 100%;
     }
     .navbar-dark .navbar-nav .nav-link {
@@ -61,6 +61,16 @@
     .fourth-color {
       background: #f5f410;
     }
+    /* Footer Styles */
+    footer {
+      background-color: #495057;
+      color: #f8f9fa;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -90,6 +100,11 @@
   </div>
 
   <iframe id="myIframe" onload="hideSpinner()"></iframe>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Elorahub. All rights reserved.
+  </footer>
 
   <script>
     // Function to hide the spinner
